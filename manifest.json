@@ -1,0 +1,10 @@
+{
+  "name": "StopUhr",
+  "short_name": "Timer",
+  "theme_color": "#3a3a3a",
+  "background_color": "#3a3a3a",
+  "display": "fullScreen",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/"
+}
