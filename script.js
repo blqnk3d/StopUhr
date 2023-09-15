@@ -45,7 +45,10 @@ startbtn.addEventListener("click", () => {
 
 roundbtn.addEventListener("click", () => {
 
-
+    if (document.getElementsByClassName("count").length >= 7) {
+        alert("Please reset the Timer\nThere are to many rounds")
+        return
+    }
     let min = Math.floor(timecount / 60)
     let sec = Math.floor(timecount % 60)
 
@@ -67,11 +70,12 @@ roundbtn.addEventListener("click", () => {
     }
 
     divRow.innerText = "Round " + currentRound + " " + minText + ":" + secText
+    divRow.className = "count"
     rounds.appendChild(divRow)
     currentRound += 1
 })
 
-document.getElementById("stop").addEventListener("click",()=>{
+document.getElementById("stop").addEventListener("click", () => {
     intervaler != null ? clearInterval(intervaler) : null
 })
 
@@ -84,9 +88,9 @@ resetbtn.addEventListener("click", () => {
     currentRound = 0
 })
 
-window.addEventListener("load",(event)=>{
-let run = setInterval(()=>{
-now = new Date()
-    document.getElementById("clock").innerText = now.toTimeString().split(" ")[0]
-},500)
+window.addEventListener("load", (event) => {
+    let run = setInterval(() => {
+        now = new Date()
+        document.getElementById("clock").innerText = now.toTimeString().split(" ")[0]
+    }, 500)
 })
