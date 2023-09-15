@@ -15,7 +15,7 @@ let currentRound = 1
 
 
 startbtn.addEventListener("click", () => {
-    startTime = Date.now()
+    startTime = Date()
     intervaler = setInterval(() => {
         let minText
         let secText
@@ -37,6 +37,8 @@ startbtn.addEventListener("click", () => {
         time.innerText = minText + " : " + secText
 
         timecount += 1
+
+
     }, 1000)
 })
 
@@ -80,4 +82,11 @@ resetbtn.addEventListener("click", () => {
     timecount = 0
     rounds.innerHTML = ""
     currentRound = 0
+})
+
+window.addEventListener("load",(event)=>{
+let run = setInterval(()=>{
+now = new Date()
+    document.getElementById("clock").innerText = now.toTimeString().split(" ")[0]
+},500)
 })
